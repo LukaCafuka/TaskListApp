@@ -1,0 +1,1 @@
+- Ovo je datoteka koja se koristi za lakšu integraciju svih paketa
