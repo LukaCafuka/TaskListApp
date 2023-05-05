@@ -1,1 +1,1 @@
-- Ovo je datoteka koja se koristi za lakšu integraciju svih paketa
+### Ovo su datoteke koje sadrže sve potrebno za započivanje projekta
