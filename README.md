@@ -12,4 +12,4 @@
 2. unutar `app.js` datoteke **izvan `Template` datoteke** se nalazi javascript gotov kod koji je detaljno opisan komentarima 🗣️🗣️🗣️
 3. kod iz gotove `app.js` datoteke kopira se u `app.js` template datoteke
 4. unutar `index.html` datoteke **izvan `Template` datoteke** se nalazi html gotov kod koji je opisan komentarima 🗣️🗣️🗣️
-3. cijeli `<body>` tag iz gotove `index.html` datoteke kopira se u `<body>` tag od `index.html` template datoteke
+3. unutar `<body>` tag iz gotove `index.html` datoteke kopira se sve osim `<script>` tag-ova te se postavljaju u `<body>` tag od `index.html` template datoteke
