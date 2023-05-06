@@ -20,6 +20,12 @@ loadEventListeners();
 function loadEventListeners() {
     // task event
     form.addEventListener('submit', addTask);
+    // brisanje specifičnog task-a
+    taskList.addEventListener('click', removeTask);
+    //brisanje svih task-ova
+    clearBtn.addEventListener('click', clearTasks);
+    //filtriranje task-ova
+    filter.addEventListener('keyup', filterTasks);
 }
 
 //funkcija za dodavanje task-ova
@@ -27,6 +33,7 @@ function addTask(e) {
     // if uvijet provjerava ako je unos prazan te prikazuje poruku ako je unos prazan
     if(taskInput.value === '') {
         alert('Add a task');
+        return;
     }
 
     //stvara novi li tag u html-u te je pohranjuje u li varijablu
@@ -49,4 +56,34 @@ function addTask(e) {
     taskInput.value = '';
 
     e.preventDefault();
+}
+// funkcija za brisanje task-a
+function removeTask(e) {
+    if(e.target.parentElement.classList.contains('delete-item')) {
+        if(confirm('Are You Sure?')) {
+            e.target.parentElement.parentElement.remove();
+        }
+    }
+    console.log(e.target);
+}
+//funckija za brisanje svih task-ova
+function clearTasks(e) {
+    while(taskList.firstChild) {
+        taskList.removeChild(taskList.firstChild);
+    }
+}
+//funkcija za filtiriranje task-ova
+function filterTasks(e) {
+    const text = e.target.value.toLowerCase();
+    console.log(text);
+
+    document.querySelectorAll('.collection-item').forEach(function(task) {
+        const item = task.firstChild.textContent;
+        if(item.toLowerCase().indexOf(text) != -1) {
+            task.style.display = 'block';
+        }
+        else {
+            task.style.display = 'none';
+        }
+    })
 }
